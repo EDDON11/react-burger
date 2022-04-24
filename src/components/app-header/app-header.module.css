@@ -1,0 +1,47 @@
+
+.header {
+  display: flex;  
+  justify-content: center;
+  align-items: center;  
+}
+
+.container {
+  width: 1280px; 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);    
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+
+.menu__btn {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+}
+
+.menu__btn:visited {
+  color: #F2F2F3;
+}
+
+.menu__left { 
+  display: flex;
+  align-items: center;
+}
+
+.menu__right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.menu__right svg {
+  padding-right: 8px;
+}
+
+.menu__left svg {
+  padding-right: 8px;
+}
