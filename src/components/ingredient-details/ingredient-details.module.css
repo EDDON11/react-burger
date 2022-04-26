@@ -16,10 +16,6 @@
   align-items: center;  
 }
 
-.title {
-  align-self: baseline;  
-}
-
 .icon {
   width: 480px;
   height: 240px;

@@ -1,5 +1,7 @@
 import stylesGroup from "../ingredient-group/ingredient-group.module.css";
 import IngredientItem from "../ingredient-item/ingredient-item";
+import PropTypes from "prop-types";
+import { types } from "../../utils/propTypes";
 
 const IngredientGroup = ({
   groupCategory,
@@ -26,6 +28,13 @@ const IngredientGroup = ({
       </div>
     </div>
   );
+};
+
+IngredientGroup.propTypes = {
+  groupCategory: PropTypes.arrayOf(types.isRequired).isRequired,
+  openModal: PropTypes.func,
+  nameCaterory: PropTypes.string.isRequired,
+  tabRef: PropTypes.object.isRequired,
 };
 
 export default IngredientGroup;

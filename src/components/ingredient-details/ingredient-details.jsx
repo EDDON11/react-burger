@@ -1,4 +1,5 @@
 import stylesDetails from "./ingredient-details.module.css";
+import PropTypes from "prop-types";
 
 function IngredientDetails({
   image,
@@ -10,9 +11,6 @@ function IngredientDetails({
 }) {
   return (
     <div className={`${stylesDetails.container} p-10`}>
-      <p className={`${stylesDetails.title} text text_type_main-large`}>
-        Детали ингредиента
-      </p>
       <img className={`${stylesDetails.icon}`} alt="заказ принят" src={image} />
       <p className="text text_type_main-medium">{name}</p>
       <div
@@ -38,5 +36,14 @@ function IngredientDetails({
     </div>
   );
 }
+
+IngredientDetails.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  calories: PropTypes.number.isRequired,
+  fat: PropTypes.number.isRequired,
+  proteins: PropTypes.number.isRequired,
+  carbohydrates: PropTypes.number.isRequired,
+};
 
 export default IngredientDetails;

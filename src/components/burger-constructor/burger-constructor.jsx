@@ -8,13 +8,15 @@ import {
 } from "@ya.praktikum/react-developer-burger-ui-components";
 
 import stylesConstructor from "./burger-constructor.module.css";
+import PropTypes from "prop-types";
+import {types} from '../../utils/propTypes';
 
-const BurgerConstructor = ({ openModal, dataBurger, Id }) => {
+const BurgerConstructor = ({ openModal, dataBurger}) => {
   const bun = dataBurger.find((item) => item.type === "bun");
   const notBun = dataBurger.filter((item) => item.type !== "bun");
 
   function onClick() {
-    openModal({ modalType: "orderDetail", Id });
+    openModal({ modalType: "orderDetail"});
   }
 
   return (
@@ -52,7 +54,7 @@ const BurgerConstructor = ({ openModal, dataBurger, Id }) => {
           <ConstructorElement
             type="bottom"
             isLocked={true}
-            text={`${bun.name} (верх)`}
+            text={`${bun.name} (низ)`}
             price={bun.price}
             thumbnail={bun.image}
           />
@@ -70,5 +72,11 @@ const BurgerConstructor = ({ openModal, dataBurger, Id }) => {
     </section>
   );
 };
+
+BurgerConstructor.propTypes = {
+  openModal: PropTypes.func.isRequired,
+  dataBurger: PropTypes.arrayOf(types.isRequired).isRequired
+
+}
 
 export default BurgerConstructor;

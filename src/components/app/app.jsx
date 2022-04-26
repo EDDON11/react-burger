@@ -75,7 +75,7 @@ function App() {
         />
       </main>
       {modalIngredientOpen && (
-        <Modal onClose={closeModal}>
+        <Modal onClose={closeModal} title={'Детали ингредиента'}>
           <IngredientDetails
             image={modalIngredient.data.image}
             name={modalIngredient.data.name}

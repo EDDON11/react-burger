@@ -5,6 +5,8 @@ import IngredientGroup from "../ingredient-group/ingredient-group";
 
 import stylesIngredients from "./burger-Ingredients.module.css";
 import "@ya.praktikum/react-developer-burger-ui-components/dist/ui/box.css";
+import PropTypes from "prop-types";
+import { types } from "../../utils/propTypes";
 
 function BurgerIngredients({ openModal, dataBurger }) {
   const [current, setCurrent] = React.useState("bun");
@@ -67,8 +69,8 @@ function BurgerIngredients({ openModal, dataBurger }) {
         </li>
         <li>
           <IngredientGroup
-            key="main"
             nameCaterory={"Начинки"}
+            openModal={openModal}
             groupCategory={mains}
             tabRef={mainRef}
           />
@@ -77,5 +79,10 @@ function BurgerIngredients({ openModal, dataBurger }) {
     </section>
   );
 }
+
+BurgerIngredients.propTypes = {
+  openModal: PropTypes.func,
+  dataBurger: PropTypes.arrayOf(types.isRequired).isRequired,
+};
 
 export default BurgerIngredients;
